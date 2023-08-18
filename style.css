@@ -1,0 +1,61 @@
+body
+{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    background: linear-gradient(
+        20deg
+        ,rgba(23,216,178,0.3),
+        rgba(255,0,0,0) 
+    );
+
+    
+    
+}
+.full_body
+{ position: relative;
+    width: 400px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.1);
+    
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #23212133;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     
+}
+.title
+{
+padding: 5px;
+display: flex;
+justify-content: center;
+font-style: italic;
+font-size: 20px;
+margin-bottom: 5px;
+}
+.instruction
+{
+font-style: italic;
+font-size: 17px;
+}
+.choices,#display
+{
+    font-style:oblique;
+}
+#create
+{
+    font-style: italic;
+    background: linear-gradient(20deg, rgba(23, 216, 178, 0.3), rgba(255, 0, 0, 0));
+    padding: 5px;
+    border-radius: 3px;
+
+
+}
+.result_display
+{
+    margin-top: 30px;
+}
