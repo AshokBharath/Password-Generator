@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+           password generator
+        </title>
+        <link rel="stylesheet" href="pass.css">
+    </head>
+    <body>
+      <div class="full_body">
+      <div class="title">
+        <label >Password Generator</label>
+      </div>
+      
+      <br>
+      <div class="instruction">
+        <p>Select input value :</p>
+      </div>
+      
+     <div class="input_value_range">
+      <p id ="display_range"></p><input type="range" min="8" max="20" id="input_range" >
+     </div>
+      
+      <div class="choices">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    password generator
-  </title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <div class="full_body">
-    <div class="title">
-      <label>Password Generator</label>
-    </div>
-
-    <br>
-    <div class="instruction">
-      <p>Enter Length of password[8-20] :</p>
-    </div>
-
-    <br>
-    <br>
-    <input id="input_range">
-    <br>
-    <br>
-    <div class="choices">
-
-      <table>
-        <tr>
-          <td> <label>Special characters</label></td>
-          <td><input type="checkbox" id="special_character"></td>
-        </tr>
-        <tr>
-          <td> <label>Numbers</label></td>
-          <td><input type="checkbox" id="numbers"> </td>
-        </tr>
-        <tr>
-          <td> <label>capitalize first character</label></td>
-          <td> <input type="checkbox" id="capitalize_first"></td>
-        </tr>
-      </table>
-    </div>
-
-    <br>
-    <br>
-    <button id="create" onclick="create()">GENERATE</button>
-
-    <div class="result_display">
-      <p id="display"></p>
-    </div>
-
-  </div>
-
-  <script src="index.js"></script>
-</body>
-
+        <table>
+          <tr>
+            <td> <label >Special characters</label></td>
+            <td><input type="checkbox" id="special_character"></td>
+            </tr>
+            <tr>
+              <td>  <label >Numbers</label></td>
+              <td><input type="checkbox" id="numbers"> </td>
+            </tr>
+            <tr>
+              <td> <label >capitalize first character</label></td>
+              <td> <input type="checkbox" id="capitalize_first"></td>
+            </tr>
+          </table>
+      </div>
+      
+        <br>
+        <br>
+          <button id="generate" onclick="create()">GENERATE</button>
+        
+        <div class="result_display">
+          <label id="display"></label>
+        </div>
+        
+      </div>
+   
+      <script src="pass.js"></script>
+    </body>
 </html>

@@ -17,8 +17,7 @@ body
 { position: relative;
     width: 400px;
     height: 500px;
-    background: rgba(0, 0, 0, 0.1);
-    
+    background: rgba(124, 124, 124, 0.133);
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 10px 10px 10px #23212133;
@@ -42,14 +41,23 @@ margin-bottom: 5px;
 font-style: italic;
 font-size: 17px;
 }
+.input_value_range
+{
+    margin-bottom: 50px;
+}
+#display_range
+{
+    display: grid;
+    justify-content: center;
+}
 .choices,#display
 {
     font-style:oblique;
 }
-#create
+#generate
 {
     font-style: italic;
-    background: linear-gradient(20deg, rgba(23, 216, 178, 0.3), rgba(255, 0, 0, 0));
+    background: linear-gradient(20deg, rgba(0, 248, 198, 0.964), rgba(255, 0, 0, 0));
     padding: 5px;
     border-radius: 3px;
 

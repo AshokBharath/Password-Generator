@@ -167,9 +167,18 @@ function create() {
 
 
     }
-    else {
+    else if((n<8||n>20)||(n.value.trim() === '') ){
+        const labelElement = document.getElementById('display');
+        labelElement.style.color = 'red';
         document.getElementById("display").innerHTML = "enter value between 8-20";
 
     }
 
 }
+document.getElementById("input_range").addEventListener('input',function()
+{
+    let input_range=document.getElementById("input_range").value;
+    console.log(input_range);
+    document.getElementById("display_range").innerHTML=input_range;
+}
+);
