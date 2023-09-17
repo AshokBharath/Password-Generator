@@ -2,11 +2,14 @@ let temporary_string = "", temporary_string1 = "", temporary_string2 = "", tempo
 let alphabet_array = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let number_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let special_characters_array = ["!", "@", "#", "$", "&", "*", "_"];
+let display_result=document.getElementById("display");
+let special_character =document.getElementById("special_character");
+let numbers =document.getElementById("numbers");
+let capitalize_first =document.getElementById("capitalize_first");
 
 function create() {
     let input = document.getElementById("input_range").value;
-    if ((input >= 8) && (input <= 20)) {
-        if (document.getElementById("special_character").checked && document.getElementById("numbers").checked && document.getElementById("capitalize_first").checked) {
+        if (special_character.checked && numbers.checked && capitalize_first.checked) {
             let alphabet_limit = Math.ceil(input / 2);
             let number_limit = (Math.ceil(input - alphabet_limit) / 2) + alphabet_limit;
 
@@ -27,9 +30,7 @@ function create() {
             temporary_string = temporary_string1 + temporary_string2 + temporary_string3;
             result_string = (temporary_string.charAt(0)).toUpperCase() + temporary_string.slice(1);
 
-
-
-            document.getElementById("display").innerHTML = result_string;
+            display(result_string);
             temporary_string = "";
             temporary_string1 = "";
             temporary_string2 = "";
@@ -39,7 +40,7 @@ function create() {
 
 
         }
-        else if (document.getElementById("special_character").checked && document.getElementById("numbers").checked) {
+        else if (special_character.checked && numbers.checked) {
             let alphabet_limit = Math.ceil(input / 2);
             let number_limit = (Math.ceil(input - alphabet_limit) / 2) + alphabet_limit;
 
@@ -58,7 +59,7 @@ function create() {
 
             }
             result_string = temporary_string1 + temporary_string2 + temporary_string3;
-            document.getElementById("display").innerHTML = result_string;
+            display(result_string);
             result_string = "";
             temporary_string1 = "";
             temporary_string2 = "";
@@ -66,7 +67,7 @@ function create() {
 
 
         }
-        else if (document.getElementById("special_character").checked && document.getElementById("capitalize_first").checked) {
+        else if (special_character.checked && capitalize_first.checked) {
             let i1 = Math.ceil(input / 2);
             let i2 = Math.ceil((input - i1) / 2);
             for (let i = 0; i < input - i2; i++) {
@@ -81,13 +82,13 @@ function create() {
             temporary_string = temporary_string1 + temporary_string2;
             result_string = (temporary_string.charAt(0)).toUpperCase() + temporary_string.slice(1);
 
-            document.getElementById("display").innerHTML = result_string;
+            display(result_string);
             result_string = "";
             temporary_string = "";
             temporary_string1 = "";
             temporary_string2 = "";
         }
-        else if (document.getElementById("numbers").checked && document.getElementById("capitalize_first").checked) {
+        else if (numbers.checked && capitalize_first.checked) {
             let i1 = Math.ceil(input / 2);
             let i2 = Math.ceil((input - i1) / 2);
             for (let i = 0; i < input - i2; i++) {
@@ -102,14 +103,14 @@ function create() {
             temporary_string = temporary_string1 + temporary_string2;
             result_string = (temporary_string.charAt(0)).toUpperCase() + temporary_string.slice(1);
 
-            document.getElementById("display").innerHTML = result_string;
+            display(result_string);
             temporary_string = "";
             temporary_string1 = "";
             temporary_string2 = "";
 
 
         }
-        else if (document.getElementById("special_character").checked) {
+        else if (special_character.checked) {
             let i1 = Math.ceil(input / 2);
             let i2 = Math.ceil((input - i1) / 2);
             for (let i = 0; i < input - i2; i++) {
@@ -123,13 +124,13 @@ function create() {
             }
             result_string = temporary_string1 + temporary_string2;
 
-            document.getElementById("display").innerHTML = result_string;
+            display(result_string);
             temporary_string = "";
             temporary_string1 = "";
             temporary_string2 = "";
 
         }
-        else if (document.getElementById("numbers").checked) {
+        else if (numbers.checked) {
             let i1 = Math.ceil(input / 2);
             let i2 = Math.ceil((input - i1) / 2);
             for (let i = 0; i < input - i2; i++) {
@@ -143,42 +144,40 @@ function create() {
             }
             result_string = temporary_string1 + temporary_string2;
 
-            document.getElementById("display").innerHTML = result_string;
+            display(result_string);
             result_string = "";
             temporary_string1 = "";
             temporary_string2 = "";
 
 
         }
-        else if (document.getElementById("capitalize_first").checked) {
+        else if (capitalize_first.checked) {
             for (let i = 0; i < input; i++) {
 
                 let n1 = Math.floor(Math.random() * alphabet_array.length);
                 temporary_string1 = temporary_string1 + alphabet_array[n1];
             }
             result_string = (temporary_string1.charAt(0)).toUpperCase() + temporary_string1.slice(1);
-            document.getElementById("display").innerHTML = result_string;
+            display(result_string);
             result_string = "";
             temporary_string1 = "";
-
+            console.log(capitalize_first.checked)
 
         }
-
-
-
+else if(special_character.checked==false&&numbers.checked==false&&capitalize_first.checked==false)
+    { 
+        display_result.style.color="red";
+        display_result.innerHTML="options left empty";
     }
-    else if((n<8||n>20)||(n.value.trim() === '') ){
-        const labelElement = document.getElementById('display');
-        labelElement.style.color = 'red';
-        document.getElementById("display").innerHTML = "enter value between 8-20";
-
-    }
-
+}
+function display(display_value)
+{
+    display_result.style.color="black";
+display_result.innerHTML=display_value;
 }
 document.getElementById("input_range").addEventListener('input',function()
 {
     let input_range=document.getElementById("input_range").value;
-    console.log(input_range);
     document.getElementById("display_range").innerHTML=input_range;
 }
 );

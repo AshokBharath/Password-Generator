@@ -1,22 +1,16 @@
-body
-{
-    display: grid;
+body {
+    display: flex;
     justify-content: center;
     align-items: center;
     margin: 10%;
-    background: linear-gradient(90deg
-        ,rgba(23,216,178,0.3),
-        rgba(255,0,0,0) 
-    );
-
-    
-    
+    background: linear-gradient(45deg, rgba(23, 216, 178, 0.3),
+    rgba(255, 0, 0, 0));
 }
-.full_body
-{ position: relative;
+
+.full_body {
     width: 400px;
     height: 500px;
-    background: rgba(124, 124, 124, 0.133);
+    background: rgba(118, 115, 115, 0.115);
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 10px 10px 10px #23212133;
@@ -24,69 +18,70 @@ body
     flex-direction: column;
     justify-content: center;
     align-items: center;
-     
-}
-.title
-{
-padding: 5px;
-display: flex;
-justify-content: center;
-font-style: italic;
-font-size: 20px;
-margin-bottom: 5px;
-}
-.instruction
-{
-font-style: italic;
-font-size: 17px;
-}
-.input_value_range
-{
-    margin-bottom: 50px;
-}
-#display_range
-{
-    display: grid;
-    justify-content: center;
-    
 
 }
-#input_range
-{
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 8px;
-  background: transparent;
-  border: 2px solid black;
-  background: linear-gradient(20deg, rgba(0, 248, 198, 0.964), rgba(255, 0, 0, 0));
-  border-radius: 5px; 
+
+.title {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    font-size: 25px;
+    margin-bottom: 5px;
 }
-#input_range::-webkit-slider-thumb 
-{
+
+.instruction {
+    font-style: italic;
+    font-size: 20px;
+}
+
+.input_value_range {
+    margin-bottom: 50px;
+}
+
+#display_range {
+    display: grid;
+    justify-content: center;
+
+
+}
+
+#input_range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+    border: 2px solid black;
+    background: linear-gradient(20deg, rgba(0, 248, 198, 0.964), rgba(255, 0, 0, 0));
+    border-radius: 5px;
+}
+
+#input_range::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 20px;
     height: 20px;
-    background:  rgb(0, 255, 204);
+    background: rgb(0, 255, 204);
     border: 2px solid black;
-    border-radius: 50%; /* Circular thumb */
-    cursor:grab;
-  }
-.choices,#display
-{
-    font-style:oblique;
+    border-radius: 50%;
+    cursor: grab;
 }
-#generate
-{
-    font-style: italic;
+
+.choices,
+#display {
+    font-style: oblique;
+    font-size: 18px;
+}
+
+#generate {
+    font-style: oblique;
     background: linear-gradient(20deg, rgba(0, 248, 198, 0.964), rgba(255, 0, 0, 0));
     padding: 5px;
     border-radius: 3px;
 
 
 }
-.result_display
-{
+.result_display {
     margin-top: 30px;
 }
